@@ -74,3 +74,13 @@ int main()
 This perfectly demonstrates how to build diagnostic GUIs or handle complex hardware reads without ever risking a memory leak.
 
 What do you think of this scenario—shall we lock this in as the next official tutorial file, or would you like to adjust the type of data the struct is returning?
+
+//----//
+
+// Dedicated to God the Father  
+// All Rights Reserved Christopher Andrew Topalian Copyright 2000-2026  
+// https://github.com/ChristopherTopalian  
+// https://github.com/ChristopherAndrewTopalian  
+// https://sites.google.com/view/CollegeOfScripting  
+// College of Scripting Music & Science
+
