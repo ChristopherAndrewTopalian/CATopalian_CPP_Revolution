@@ -8,9 +8,9 @@ To train the next generation of engineers in a C++ paradigm that is entirely rea
 This repository contains the foundational doctrine and templates for a modernized C++ development pipeline. It is designed specifically for embedded systems, high-speed robotics, drone swarm logic, and bare-metal microcontrollers (ESP32-S3, STM32, RP2040).
 
 ## ⚠️ The Core Doctrine
-**Rule 1: ZERO Raw Pointers (`*`).**
-**Rule 2: ZERO Manual Memory Allocation (`new`, `malloc`, `delete`).**
-**Rule 3: ZERO References and Ampersands (`&`).**
+**Rule 1: ZERO Raw Pointers (`*`).**  
+**Rule 2: ZERO Manual Memory Allocation (`new`, `malloc`, `delete`).**  
+**Rule 3: ZERO References and Ampersands (`&`).**  
 **Rule 4: ZERO `const` Clutter on Function Parameters.**
 
 Traditional C++ teaches developers to use the ampersand (`&`) to pass variables "by reference" to avoid duplicating memory. However, this introduces two massive architectural flaws: it creates the risk of "dangling references" (tunneling into memory that has already been destroyed), and it allows functions to secretly mutate variables outside of their local scope. 
