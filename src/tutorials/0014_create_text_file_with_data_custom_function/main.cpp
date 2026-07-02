@@ -4,7 +4,6 @@
 #include <fstream>
 #include <string>
 
-// The Professional Pattern: const + & for speed and safety
 void writeToFile(std::string filename, std::string content)
 {
     std::ofstream outputFile(filename);
@@ -33,7 +32,7 @@ int main()
     std::cout << "\nPress Enter to Exit";
     std::cin.ignore();
     std::cin.get();
-    
+
     return 0;
 }
 
