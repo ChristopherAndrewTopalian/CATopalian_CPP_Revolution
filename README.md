@@ -12,6 +12,7 @@ This repository contains the foundational doctrine and templates for a modernize
 **Rule 2: ZERO Manual Memory Allocation (`new`, `malloc`, `delete`).**  
 **Rule 3: ZERO References and Ampersands (`&`).**  
 **Rule 4: ZERO `const` Clutter on Function Parameters.**
+**Rule 5: Explicit Namespace Usage (No `using namespace std;`).**
 
 ### 🛡️ The Tactical Advantage: Threat Vectors Neutralized
 By strictly adhering to the Four Rules of the CATopalian Doctrine, this architecture mathematically eliminates the most critical vulnerabilities that plague legacy C++ systems. We trade a negligible fraction of processing overhead for absolute, impenetrable stability. 
@@ -34,9 +35,15 @@ The CATopalian Paradigm strictly enforces **Pure Pass-by-Value** and **Return-by
 
 In traditional C++, developers use `const` on parameters (e.g., `void process(const std::string& data)`) as a shield to prevent accidentally altering the original data through a reference tunnel. 
 
-Because the Catopalian Paradigm enforces strict Pass-by-Value (Rule 3), every function receives its own completely isolated copy of the data. Modifying a local copy cannot harm the original state. Therefore, putting a `const` shield on a safely isolated, pass-by-value parameter is redundant visual clutter and is strictly prohibited. Keep the parameters clean: `void process(std::string data)`.
+Because the CATopalian Paradigm enforces strict Pass-by-Value (Rule 3), every function receives its own completely isolated copy of the data. Modifying a local copy cannot harm the original state. Therefore, putting a `const` shield on a safely isolated, pass-by-value parameter is redundant visual clutter and is strictly prohibited. Keep the parameters clean: `void process(std::string data)`.
 
 * **The Single Exception (Configuration Variables):** The `const` keyword is exclusively reserved for locking down hardcoded, global configuration values at the top of a file (e.g., `const int MAX_DRONES = 50000;`), functioning exactly as it does in JavaScript.
+
+---
+
+Namespace pollution is a high-risk security and maintenance vulnerability. Using `using namespace` imports thousands of symbols into the global scope, increasing the likelihood of name collisions and making code origins ambiguous. 
+
+All code in this paradigm must use explicit namespace qualification (e.g., `std::cout`, `std::chrono::system_clock`). This ensures that every function call is self-documenting, immune to naming collisions, and readable at a glance.
 
 ---
 
