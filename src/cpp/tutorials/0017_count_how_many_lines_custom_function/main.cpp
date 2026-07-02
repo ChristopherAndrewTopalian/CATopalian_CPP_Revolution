@@ -23,7 +23,7 @@ int countLinesInFile(std::string filename)
     }
 
     inputFile.close();
-    
+
     // Hand the final data back to the Orchestrator
     return lineCount;
 }
