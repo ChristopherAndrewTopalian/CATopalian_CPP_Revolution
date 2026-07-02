@@ -5,16 +5,16 @@
 // Zero pointers, zero references, zero const-clutter, explicit namespaces.
 int get_year()
 {
-    // 1. Get the current exact time explicitly
+    // Get the current exact time explicitly
     auto now = std::chrono::system_clock::now();
 
-    // 2. Round down to the current day
+    // Round down to the current day
     auto today = std::chrono::time_point_cast<std::chrono::days>(now);
 
-    // 3. Convert into a Year-Month-Day object
+    // Convert into a Year-Month-Day object
     std::chrono::year_month_day ymd{today};
 
-    // 4. Return the isolated integer back to the caller
+    // Return the isolated integer back to the caller
     return static_cast<int>(ymd.year());
 }
 
