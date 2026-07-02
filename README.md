@@ -1,11 +1,11 @@
-# CATopalian_Cplusplus_Revolution
+# CATopalian_CPlusPlus_Revolution
 # The CATopalian C++ Paradigm 
 **Military-Grade, Zero-Pointer, Data-Oriented C++ Architecture**
 
 🚀 Objective
 To train the next generation of engineers in a C++ paradigm that is entirely readable, fundamentally crash-proof, and universally compatible with every microchip on the planet.
 
-This repository contains the foundational doctrine and templates for a modernized C++ development pipeline. It is designed specifically for embedded systems, high-speed robotics, drone swarm logic, and bare-metal microcontrollers (ESP32-S3, STM32, RP2040).
+This repository contains the foundational doctrine and templates for a modernized C++ development pipeline. It is designed specifically for embedded systems, high-speed robotics, drone swarm logic, and bare-metal microcontrollers (ESP32-S3, STM32, RP2040), but also works for desktop applications too!
 
 ## ⚠️ The Core Doctrine
 **Rule 1: ZERO Raw Pointers (`*`).**  
