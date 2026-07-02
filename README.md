@@ -5,7 +5,7 @@
 🚀 Objective
 To train the next generation of engineers in a C++ paradigm that is entirely readable, fundamentally crash-proof, and universally compatible with every microchip on the planet.
 
-This repository contains the foundational doctrine and templates for a modernized C++ development pipeline. It is designed specifically for embedded systems, high-speed robotics, drone swarm logic, and bare-metal microcontrollers (ESP32-S3, STM32, RP2040), but also works for desktop applications too!
+This repository contains the foundational doctrine and templates for a modernized C++ development pipeline. It is designed specifically for embedded systems, high-speed robotics, drone swarm logic, and bare-metal microcontrollers (ESP32-S3, STM32, RP2040), but also works for desktop applications too to make totally secure apps very easily!
 
 ## ⚠️ The Core Doctrine
 **Rule 1: ZERO Raw Pointers (`*`).**  
