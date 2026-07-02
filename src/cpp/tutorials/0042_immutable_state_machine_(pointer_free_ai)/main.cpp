@@ -2,10 +2,8 @@
 #include <string>
 #include <variant>
 
-// ========================================================
-// 1. THE STATE PACKETS
+// THE STATE PACKETS
 // We define our states as pure data structs. Zero logic inside them.
-// ========================================================
 struct StandbyMode { 
     float battery_level; 
 };
@@ -18,17 +16,13 @@ struct InterceptMode {
     std::string target_id; 
 };
 
-// ========================================================
-// 2. THE STATE BUNKER (The Variant)
+// THE STATE BUNKER (The Variant)
 // The drone can only be in ONE of these states at a time.
-// ========================================================
 using DroneState = std::variant<StandbyMode, PatrolMode, InterceptMode>;
 
-// ========================================================
-// 3. THE PURE AI ENGINE
+// THE PURE AI ENGINE
 // Takes the current state and sensor data by value.
 // Returns the brand-new state by value. Zero internal mutation.
-// ========================================================
 DroneState calculate_next_state(DroneState current_state, bool radar_ping)
 {
     // Check if we are in Standby
@@ -41,7 +35,7 @@ DroneState calculate_next_state(DroneState current_state, bool radar_ping)
         }
         return current_state; // Stay in Standby
     }
-    
+
     // Check if we are in Patrol
     if (std::holds_alternative<PatrolMode>(current_state))
     {
@@ -50,12 +44,12 @@ DroneState calculate_next_state(DroneState current_state, bool radar_ping)
             std::cout << "[AI LOGIC] Target locked! Engaging intercept...\n";
             return InterceptMode{"Bogey-Alpha"}; // Transition to Intercept
         }
-        
+
         // If no ping, just update the patrol data safely
         int current_waypoints = std::get<PatrolMode>(current_state).waypoints_cleared;
         return PatrolMode{current_waypoints + 1}; 
     }
-    
+
     // If in Intercept (Terminal state for this example)
     return current_state; 
 }
@@ -64,14 +58,14 @@ int main()
 {
     std::cout << "--- Tactical AI State Engine ---\n\n";
 
-    // 4. INITIALIZE THE STATE
+    // INITIALIZE THE STATE
     // The drone starts on the ground.
     DroneState active_drone = StandbyMode{100.0f};
     std::cout << "Starting Status: STANDBY\n\n";
 
-    // 5. THE PURE HARDWARE LOOP
+    // THE PURE HARDWARE LOOP
     // We update the state by feeding it back into the pure function.
-    
+
     // Tick 1: No radar ping
     std::cout << "--- Tick 1 ---\n";
     active_drone = calculate_next_state(active_drone, false);
@@ -79,7 +73,7 @@ int main()
     // Tick 2: Radar ping! (Transitions to Patrol)
     std::cout << "\n--- Tick 2 ---\n";
     active_drone = calculate_next_state(active_drone, true);
-    
+
     // Tick 3: No radar ping (Updates Patrol waypoints)
     std::cout << "\n--- Tick 3 ---\n";
     active_drone = calculate_next_state(active_drone, false);

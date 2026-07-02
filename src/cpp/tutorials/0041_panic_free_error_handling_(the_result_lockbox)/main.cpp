@@ -2,17 +2,13 @@
 #include <string>
 #include <variant>
 
-// ========================================================
-// 1. THE RESULT ALIAS (The Secure Error Lockbox)
+// THE RESULT ALIAS (The Secure Error Lockbox)
 // This variant holds EITHER a successful float (temperature)
 // OR a string containing an error message. It cannot hold both.
-// ========================================================
 using SensorResult = std::variant<float, std::string>;
 
-// ========================================================
-// 2. THE DETERMINISTIC FUNCTION
+// THE DETERMINISTIC FUNCTION
 // Zero 'throw' statements. Zero invisible crashes.
-// ========================================================
 SensorResult read_engine_temperature(int sensor_id)
 {
     // Simulating a broken sensor
@@ -31,7 +27,7 @@ int main()
 {
     std::cout << "--- Tactical Diagnostic System ---\n\n";
 
-    // 3. SECURE ERROR CHECKING
+    // SECURE ERROR CHECKING
     // We check Sensor 1 (Online)
     std::cout << "Polling Sensor 1...\n";
     SensorResult result_one = read_engine_temperature(1);
@@ -45,7 +41,7 @@ int main()
     std::cout << "Polling Sensor 404...\n";
     SensorResult result_two = read_engine_temperature(404);
 
-    // 4. THE FORCED CHECK
+    // THE FORCED CHECK
     // The compiler forces the developer to check what is inside the bunker.
     // If it's a string, we know exactly how to handle the failure gracefully.
     if (std::holds_alternative<std::string>(result_two))

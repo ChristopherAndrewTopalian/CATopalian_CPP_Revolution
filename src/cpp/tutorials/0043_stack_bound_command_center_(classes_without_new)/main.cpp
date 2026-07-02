@@ -2,11 +2,9 @@
 #include <string>
 #include <vector>
 
-// ========================================================
-// 1. THE ENGINE CLASS (The Blueprint)
+// THE ENGINE CLASS (The Blueprint)
 // We bundle our secure variables and pure functions into 
 // one clean, modular command center.
-// ========================================================
 class CatopalianEngine 
 {
 private:
@@ -16,10 +14,8 @@ private:
     bool engine_running;
 
 public:
-    // ----------------------------------------------------
     // CONSTRUCTOR (Initialization)
     // Automatically runs the instant the engine is spawned.
-    // ----------------------------------------------------
     CatopalianEngine() 
     {
         engine_running = true;
@@ -27,20 +23,16 @@ public:
         std::cout << "[SYSTEM] Engine initialized securely on the stack.\n";
     }
 
-    // ----------------------------------------------------
     // DESTRUCTOR (The Automatic Incinerator)
     // We do NOT need the 'delete' keyword anywhere in our code.
     // When the engine leaves its scope, C++ automatically calls 
     // this and destroys all internal vectors and variables safely.
-    // ----------------------------------------------------
     ~CatopalianEngine() 
     {
         std::cout << "[SYSTEM] Engine gracefully shut down. Zero memory leaks.\n";
     }
 
-    // ----------------------------------------------------
     // PURE COMMAND METHODS
-    // ----------------------------------------------------
     void engage_protocol(std::string protocol) 
     {
         active_protocols.push_back(protocol);
@@ -53,19 +45,17 @@ public:
     }
 };
 
-// ========================================================
-// 2. THE MAIN BATTLESPACE
-// ========================================================
+// THE MAIN BATTLESPACE
 int main() 
 {
     std::cout << "--- Tactical Engine Initialization ---\n\n";
 
-    // 3. THE CATOPALIAN INSTANTIATION
+    // THE CATOPALIAN INSTANTIATION
     // Legacy developers write: CatopalianEngine* command = new CatopalianEngine();
     // We simply write this:
     CatopalianEngine main_command;
 
-    // 4. EXECUTE LOGIC (The JavaScript Bridge)
+    // EXECUTE LOGIC (The JavaScript Bridge)
     // Because we used pure Stack allocation, we don't use the messy pointer arrow (->).
     // We use the clean, standard dot operator (.), exactly like JavaScript.
     main_command.engage_protocol("DRONE_SWARM_UPLINK");
@@ -79,7 +69,7 @@ int main()
     std::cin.ignore();
     std::cin.get();
 
-    // 5. THE MAGIC HAPPENS HERE
+    // THE MAGIC HAPPENS HERE
     // The second 'return 0;' hits, 'main_command' is out of bounds.
     // The C++ compiler instantly drops the stack and incinerates the engine.
     return 0;
