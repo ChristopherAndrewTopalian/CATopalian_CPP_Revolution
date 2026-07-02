@@ -19,7 +19,7 @@ This repository contains the foundational doctrine and templates for a modernize
 **Rule 1: ZERO Raw Pointers (`*`).**  
 **Rule 2: ZERO Manual Memory Allocation (`new`, `malloc`, `delete`).**  
 **Rule 3: ZERO References and Ampersands (`&`).**  
-**Rule 4: ZERO `const` Clutter on Function Parameters.**
+**Rule 4: ZERO `const` Clutter on Function Parameters.**  
 **Rule 5: Explicit Namespace Usage (No `using namespace std;`).**
 
 ### 🛡️ The Tactical Advantage: Threat Vectors Neutralized
