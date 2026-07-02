@@ -10,6 +10,10 @@ C++ is finally safe. The CATopalian Paradigm completely eradicates memory leaks 
 
 ---
 
+![cpp](src/media/textures/bg/cpp_001.jpg)
+
+---
+
 🚀 Objective
 To train the next generation of engineers in a C++ paradigm that is entirely readable, fundamentally crash-proof, and universally compatible with every microchip on the planet.
 
