@@ -1,4 +1,4 @@
-// for loop
+// for_loop
 
 #include <iostream>
 
