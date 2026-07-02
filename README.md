@@ -1,4 +1,4 @@
-# CATopalian_CPlusPlus_Revolution
+# CATopalian_CPP_Revolution
 # The CATopalian C++ Paradigm 
 **Military-Grade, Zero-Pointer, Data-Oriented C++ Architecture**
 
