@@ -10,6 +10,21 @@ This repository contains the foundational doctrine and templates for a modernize
 ## ⚠️ The Core Doctrine
 **Rule 1: ZERO Raw Pointers (`*`).**
 **Rule 2: ZERO Manual Memory Allocation (`new`, `malloc`, `delete`).**
+**Rule 3: ZERO References and Ampersands (`&`).**
+
+Traditional C++ teaches developers to use the ampersand (`&`) to pass variables "by reference" to avoid duplicating memory. However, this introduces two massive architectural flaws: it creates the risk of "dangling references" (tunneling into memory that has already been destroyed), and it allows functions to secretly mutate variables outside of their local scope. 
+
+The CATopalian Paradigm strictly enforces **Pure Pass-by-Value** and **Return-by-Value**. Data must flow in one clear, predictable direction. Instead of using an ampersand to create a hazardous tunnel to the original data, we return new data and rely on the compiler's native Return Value Optimization (RVO) and Move Semantics to transfer memory ownership instantly, safely, and natively.
+
+**Rule 4: ZERO `const` Clutter on Function Parameters.**
+
+In traditional C++, developers use `const` on parameters (e.g., `void process(const std::string& data)`) as a shield to prevent accidentally altering the original data through a reference tunnel. 
+
+Because the Catopalian Paradigm enforces strict Pass-by-Value (Rule 3), every function receives its own completely isolated copy of the data. Modifying a local copy cannot harm the original state. Therefore, putting a `const` shield on a safely isolated, pass-by-value parameter is redundant visual clutter and is strictly prohibited. Keep the parameters clean: `void process(std::string data)`.
+
+* **The Single Exception (Configuration Variables):** The `const` keyword is exclusively reserved for locking down hardcoded, global configuration values at the top of a file (e.g., `const int MAX_DRONES = 50000;`), functioning exactly as it does in JavaScript.
+
+---
 
 Traditional C++ relies heavily on manual memory management, creating an immense cognitive load and introducing critical security vulnerabilities (segmentation faults, dangling pointers, memory leaks). 
 
