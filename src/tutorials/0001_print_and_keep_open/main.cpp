@@ -12,12 +12,12 @@ int main()
     return 0;
 }
 
+// g++ main.cpp -o our_test.exe
+
 /*
 Hi Everyone
 Press Enter to Exit
 */
-
-// g++ main.cpp -o our_test.exe
 
 //----//
 
