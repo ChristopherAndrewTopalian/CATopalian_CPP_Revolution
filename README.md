@@ -84,6 +84,7 @@ int main() {
     consoleLog("System Initialized. Catopalian Paradigm Active.");
     return 0;
 }
+```
 
 ---
 
