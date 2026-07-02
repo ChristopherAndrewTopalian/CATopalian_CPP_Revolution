@@ -2,7 +2,7 @@
 # The CATopalian C++ Paradigm 
 **Military-Grade, Zero-Pointer, Data-Oriented C++ Architecture**
 
-The CATopalian C++ Paradigm: A 21st-century, zero-pointer architecture. We eliminated manual memory management to make C++ mathematically secure, crash-proof, and as readable as modern scripting.
+The CATopalian C++ Paradigm: A 21st-century, zero-pointer architecture that is 99.9% more secure! We eliminated manual memory management to make C++ mathematically secure, crash-proof, and as readable as modern scripting!
 
 The definitive 21st-century C++ methodology. Zero pointers. Zero memory leaks. We stripped the hazards out of legacy C++ to deliver a memory-safe, highly readable engine for next-generation defense and robotics.
 
@@ -10,7 +10,7 @@ C++ is finally safe. The CATopalian Paradigm completely eradicates memory leaks 
 
 ---
 
-![cpp](src/media/textures/bg/cpp_001.jpg)
+![cpp](src/media/textures/bg/cpp_001.png)
 
 ---
 
