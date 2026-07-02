@@ -1,4 +1,4 @@
-# The CATopalian Architectural Blueprint
+# The CATopalian CPP Architectural Blueprint
 **The Modern Toolkit for Pointer-Free C++ Engineering**
 
 If the *Core Philosophy* dictates why we abandon pointers, this blueprint dictates exactly *how* we replace them. 
