@@ -67,6 +67,15 @@ int main()
 
 // g++ main.cpp -o our_test.exe
 
+/*
+--- Radar Scan Initiated ---
+Target Acquired!
+Class: Unknown Aircraft
+Range: 85.2 km
+
+Press Enter to Exit...
+*/
+
 //----//
 
 // Dedicated to God the Father

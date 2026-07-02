@@ -60,6 +60,16 @@ int main()
 
 // g++ main.cpp -o our_test.exe
 
+/*
+Total Packets Processed: 4
+Critical Alerts Isolated: 2
+
+Device ID: 102 | Intensity: 98.6
+Device ID: 104 | Intensity: 112.4
+
+Press Enter to Exit...
+*/
+
 //----//
 
 // Dedicated to God the Father
