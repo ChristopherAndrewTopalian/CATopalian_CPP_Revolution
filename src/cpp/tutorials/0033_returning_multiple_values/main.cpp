@@ -17,7 +17,7 @@ struct DiagnosticData
 DiagnosticData get_system_diagnostics() 
 {
     DiagnosticData reading;
-    
+
     // Simulating raw hardware data gathering
     reading.voltage = 12.4f;
     reading.temperature = 42.8f;
