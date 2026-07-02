@@ -1,7 +1,5 @@
 // Get Current Working Directory
 
-// Get Current Working Directory
-
 #include <iostream>
 #include <windows.h>
 
