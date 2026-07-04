@@ -1,7 +1,5 @@
 // Read a Text File
 
-// Read a Text File
-
 #include <iostream>
 #include <string>
 #include <fstream>
