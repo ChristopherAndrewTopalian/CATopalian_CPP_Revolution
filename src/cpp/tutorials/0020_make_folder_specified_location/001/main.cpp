@@ -1,7 +1,5 @@
 // Make New Folder in Specified Location
 
-// Make New Folder in Specified Location
-
 #include <iostream>
 #include <windows.h>
 
