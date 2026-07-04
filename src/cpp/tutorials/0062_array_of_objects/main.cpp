@@ -17,8 +17,17 @@ int main()
     // THE CLEAN ARRAY
     // Zero periods. We just feed it the data in the correct order
     std::vector<Person> world = {
-        { "Jane", "Doe", 95 },
-        { "Bob",  "Smith", 80 }
+        {
+            "Jane",
+            "Doe",
+            95
+        },
+
+        {
+            "Bob",
+            "Smith",
+            80
+        }
     };
 
     // DYNAMIC PUSH
