@@ -2,8 +2,6 @@
 #include <vector>
 #include <string>
 
-// THE DATA BLUEPRINT
-// The order here matters: First Name, Last Name, Score.
 struct Person {
     std::string firstName;
     std::string lastName;
@@ -12,25 +10,31 @@ struct Person {
 
 int main()
 {
-    std::cout << "--- Tactical Roster ---\n\n";
-
-    // THE CLEAN ARRAY
-    // Zero periods. We just feed it the data in the correct order
+    // Create the array of objects (Notice how much this looks like JSON!)
     std::vector<Person> world = {
-        { "Jane", "Doe", 95 },
-        { "Bob",  "Smith", 80 }
+        {
+            .firstName = "Jane",
+            .score = 95
+        },
+
+        {
+            .firstName = "Bob", 
+            .score = 80
+        }
     };
 
-    // DYNAMIC PUSH
-    // Exactly the same clean syntax when adding new data on the fly.
-    world.push_back({ "Sam", "Jones", 72 });
+    // Push a new object dynamically
+    world.push_back(
+        {
+            .firstName = "Sam", .score = 72
+        }
+    );
 
-    // THE LOOP
-    // 'auto' does all the heavy lifting.
+    // Loop through the array by value 
+    // We use 'auto' here so the language figures out the type, just like 'let'
     for (auto e : world)
     {
-        std::cout << "-> " << e.firstName << " " << e.lastName 
-            << " | Score: " << e.score << "\n";
+        std::cout << e.firstName << " has a score of: " << e.score << "\n";
     }
 
     // Standardized Exit Pattern
@@ -44,11 +48,9 @@ int main()
 // g++ main.cpp -o our_test.exe
 
 /*
---- Tactical Roster ---
-
--> Jane Doe | Score: 95
--> Bob Smith | Score: 80
--> Sam Jones | Score: 72
+Jane has a score of: 95
+Bob has a score of: 80
+Sam has a score of: 72
 Press Enter to Exit...
 */
 

@@ -15,9 +15,20 @@ int main()
 {
     // Initializing our "Array of Objects"
     std::vector<Person> people = {
-        {"Alice", 25},
-        {"Bob", 30},
-        {"Jane", 28}
+        {
+            "Alice",
+            25
+        },
+
+        {
+            "Bob",
+            30
+        },
+
+        {
+            "Jane",
+            28
+        }
     };
 
     // The CATopalian Loop: Pure Data-Oriented indexing. Zero ampersands.
