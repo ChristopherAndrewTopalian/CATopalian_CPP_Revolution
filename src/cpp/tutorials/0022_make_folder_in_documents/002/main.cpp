@@ -1,29 +1,33 @@
 #include <iostream>
 #include <string>
-#include <filesystem> // The 21st-Century File System
-#include <cstdlib>    // Allows us to read OS environment variables securely
+#include <filesystem>
+#include <cstdlib>
 
 // THE CUSTOM FUNCTION
-// Dynamically finds the user's Documents folder and builds infrastructure.
+// Pointer-free, mathematically secure infrastructure building.
 void create_starfleet_directory(std::string folder_name)
 {
-    // Get the Home Directory (Like Node.js os.homedir())
-    // On Windows systems, "USERPROFILE" automatically returns "C:\Users\YourName"
-    const char* home_drive = std::getenv("USERPROFILE");
+    // THE AUTO SHIELD
+    // The OS tries to hand us a raw pointer, but we catch it with 'auto'.
+    // No asterisks (*). No legacy C types. The compiler handles the dirt.
+    auto os_drive = std::getenv("USERPROFILE");
 
-    // Safety check: If for some reason the OS doesn't know where the home drive is
-    if (home_drive == nullptr)
+    // THE SAFETY GATE
+    // We simply check if the OS actually found anything.
+    if (!os_drive)
     {
         std::cout << "[CRITICAL ERROR] Could not locate the user's home drive.\n";
-        return; // Abort the function safely!
+        return; 
     }
 
-    // Build the exact path cleanly using standard strings
-    // We glue the Home Drive + Documents + Our Custom Folder Name
-    std::string full_path = std::string(home_drive) + "\\Documents\\" + folder_name;
+    // THE SECURE BUNKER
+    // We instantly teleport the OS data into our safe, modern String.
+    std::string secure_home = os_drive;
 
-    // The Easy Button: Create it safely
-    // std::filesystem::create_directories automatically builds the whole path.
+    // Build the exact path cleanly
+    std::string full_path = secure_home + "\\Documents\\" + folder_name;
+
+    // The Easy Button: Create the infrastructure
     if (std::filesystem::create_directories(full_path))
     {
         std::cout << "[SUCCESS] Infrastructure built at: " << full_path << "\n";
@@ -34,19 +38,13 @@ void create_starfleet_directory(std::string folder_name)
     }
 }
 
-// THE MAIN ENGINE
 int main()
 {
     std::cout << "--- Starfleet Academy: Environmental Setup ---\n\n";
 
-    // Call the function just like you would in JavaScript or LSL!
     create_starfleet_directory("StarfleetData");
-    
-    // You can instantly reuse it to build multiple folders
     create_starfleet_directory("StarfleetData\\MissionLogs");
-    create_starfleet_directory("StarfleetData\\PersonnelFiles");
 
-    // Standardized Exit Pattern
     std::cout << "\nPress Enter to Exit...";
     std::cin.ignore(10000, '\n');
     std::cin.get();
