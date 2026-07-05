@@ -8,7 +8,7 @@ The definitive 21st-century C++ methodology. Zero pointers. Zero memory leaks. W
 
 ---
 
-## [How to Install C++ Compiler](src/cpp/0001_Install_Compiler/install_compiler_001.md)
+## [How to Install C++ Compiler](src/cpp/0001_install_compiler/install_compiler_001.md)
 
 ---
 
