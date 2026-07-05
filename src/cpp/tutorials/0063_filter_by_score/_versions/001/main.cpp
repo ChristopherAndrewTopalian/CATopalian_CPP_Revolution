@@ -2,7 +2,6 @@
 #include <vector>
 #include <string>
 
-// THE BLUEPRINT
 struct Person {
     std::string firstName;
     std::string lastName;
@@ -11,20 +10,20 @@ struct Person {
 
 int main()
 {
-    std::cout << "--- Tactical Roster Filter ---\n\n";
-
-    // THE ARRAY OF OBJECTS (Using Designated Initializers)
+    // Create the array of objects (Notice how much this looks like JSON!)
     std::vector<Person> world = {
         {
             .firstName = "Jane",
             .lastName = "Doe",
             .score = 95
         },
+
         {
             .firstName = "Bob",
             .lastName = "Smith",
             .score = 80
         },
+
         {
             .firstName = "Joan",
             .lastName = "Lee",
@@ -32,7 +31,7 @@ int main()
         }
     };
 
-    // PUSH A NEW OBJECT DYNAMICALLY
+    // Push a new object dynamically
     world.push_back(
         {
             .firstName = "Sam",
@@ -41,50 +40,35 @@ int main()
         }
     );
 
-    // THE FILTER ENGINE
+    // Filter: only print names of people scoring above 95
     bool found_any = false;
 
-    std::cout << "[SYSTEM] Searching for scores above 95...\n\n";
-
-    // The CATopalian Loop: Pure, secure data indexing.
-    for (int i = 0; i < world.size(); i++)
+    for (auto e : world)
     {
-        // Check if the current person meets our elite criteria
-        if (world[i].score > 95)
+        if (e.score > 95)
         {
-            std::cout << "* ELITE DETECTED: " << world[i].firstName 
-                << " " << world[i].lastName 
-                << " | Score: " << world[i].score << "\n";
-
-            // Flip the flag so the system knows we found someone
-            found_any = true; 
+            std::cout << e.firstName << " has a score of: " << e.score << "\n";
+            found_any = true;
         }
     }
 
-    // THE FAILSAFE
-    // If the loop finished and our flag is still false, report it.
     if (!found_any)
     {
-        std::cout << "* No one has a score above 95.\n";
+        std::cout << "No one has a score above 95\n";
     }
 
     // Standardized Exit Pattern
-    std::cout << "\nPress Enter to Exit...";
-    std::cin.ignore(10000, '\n');
+    std::cout << "Press Enter to Exit...";
+    std::cin.ignore();
     std::cin.get();
 
     return 0;
 }
 
-// g++ main.cpp -std=c++20 -o our_test.exe
+// g++ main.cpp -o our_test.exe
 
 /*
---- Tactical Roster Filter ---
-
-[SYSTEM] Searching for scores above 95...
-
-* ELITE DETECTED: Joan Lee | Score: 97
-
+Joan has a score of: 97
 Press Enter to Exit...
 */
 
