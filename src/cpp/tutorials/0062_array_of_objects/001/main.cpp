@@ -46,7 +46,7 @@ int main()
     return 0;
 }
 
-// g++ main.cpp -o our_test.exe
+// g++ main.cpp -std=c++20 -o our_test.exe
 
 /*
 Jane has a score of: 95
