@@ -32,7 +32,6 @@ int main()
         }
     };
 
-    // THE CATOPALIAN LOOP
     // Pure Data-Oriented indexing. Zero ampersands. Zero pointers.
     // We access the memory directly using [i].
     for (int i = 0; i < people.size(); i++)
@@ -45,7 +44,7 @@ int main()
     std::cout << "\nPress Enter to Exit...";
     std::cin.ignore(10000, '\n');
     std::cin.get();
-    
+
     return 0;
 }
 
