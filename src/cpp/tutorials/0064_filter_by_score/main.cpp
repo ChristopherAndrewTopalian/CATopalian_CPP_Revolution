@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 
+// THE BLUEPRINT
 struct Person {
     std::string firstName;
     std::string lastName;
@@ -10,56 +11,68 @@ struct Person {
 
 int main()
 {
-    std::vector<Person> world =
-    {
+    std::cout << "--- Tactical Roster: Data Extraction ---\n\n";
+
+    // THE MAIN ARRAY
+    // Our starting data. We safely skip '.lastName' thanks to the periods!
+    std::vector<Person> world = {
         {
             .firstName = "Jane",
             .score = 95
         },
-
         {
             .firstName = "Bob",
             .score = 80
         },
-
         {
             .firstName = "Joan",
             .score = 97
         }
     };
 
-    // Create a clean, empty array for the winners
+    // THE EXTRACTION ARRAY
+    // We create a clean, empty array waiting to catch the winners.
     std::vector<Person> high_scorers;
 
-    // Loop through the world
-    for (auto p : world)
+    // THE FILTER ENGINE (The CATopalian Loop)
+    // We loop through the entire world securely.
+    for (int i = 0; i < world.size(); i++)
     {
-        if (p.score > 90)
+        if (world[i].score > 90)
         {
-            // Push them into the new array
-            high_scorers.push_back(p);
+            // If they scored over 90, push a copy of them into the new array!
+            high_scorers.push_back(world[i]);
         }
     }
 
-    // Now 'high_scorers' only contains Jane and Joan
-    for (auto e : high_scorers)
+    std::cout << "[SYSTEM] Extraction Complete. Displaying Elite Roster:\n\n";
+
+    // VERIFYING THE EXTRACTION
+    // Now we loop through our NEW array to prove they were successfully saved.
+    // Notice we use 'i' again here securely.
+    for (int i = 0; i < high_scorers.size(); i++)
     {
-        std::cout << e.firstName << " is elite!\n";
+        std::cout << "* " << high_scorers[i].firstName << " is elite!\n";
     }
 
     // Standardized Exit Pattern
-    std::cout << "Press Enter to Exit...";
-    std::cin.ignore();
+    std::cout << "\nPress Enter to Exit...";
+    std::cin.ignore(10000, '\n');
     std::cin.get();
 
     return 0;
 }
 
-// g++ main.cpp -o our_test.exe
+// g++ main.cpp -std=c++20 -o our_test.exe
 
 /*
-Jane is elite!
-Joan is elite!
+--- Tactical Roster: Data Extraction ---
+
+[SYSTEM] Extraction Complete. Displaying Elite Roster:
+
+* Jane is elite!
+* Joan is elite!
+
 Press Enter to Exit...
 */
 
