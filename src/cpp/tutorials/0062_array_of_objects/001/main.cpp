@@ -26,7 +26,8 @@ int main()
     // Push a new object dynamically
     world.push_back(
         {
-            .firstName = "Sam", .score = 72
+            .firstName = "Sam",
+            .score = 72
         }
     );
 
