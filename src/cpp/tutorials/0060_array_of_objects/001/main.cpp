@@ -11,16 +11,29 @@ struct Entity {
 int main() {
     // Create the array of objects (Notice how much this looks like JSON!)
     std::vector<Entity> world = {
-        {.name = "Jane", .score = 95},
-        {.name = "Bob",  .score = 80}
+        {
+            .name = "Jane",
+            .score = 95
+        },
+
+        {
+            .name = "Bob",
+            .score = 80
+        }
     };
 
     // Push a new object dynamically
-    world.push_back({.name = "Sam", .score = 72});
+    world.push_back(
+        {
+            .name = "Sam",
+            .score = 72
+        }
+    );
 
     // Loop through the array by value 
     // We use 'auto' here so the language figures out the type, just like 'let'
-    for (auto e : world) {
+    for (auto e : world)
+    {
         std::cout << e.name << " has a score of: " << e.score << "\n";
     }
 
@@ -32,7 +45,7 @@ int main() {
     return 0;
 }
 
-// g++ main.cpp -o our_test.exe
+// g++ main.cpp -std=c++20 -o our_test.exe
 
 /*
 Jane has a score of: 95
