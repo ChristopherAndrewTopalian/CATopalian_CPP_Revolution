@@ -6,6 +6,12 @@ The CATopalian C++ Paradigm: A 21st-century, zero-pointer architecture that is 9
 
 The definitive 21st-century C++ methodology. Zero pointers. Zero memory leaks. We stripped the hazards out of legacy C++ to deliver a memory-safe, highly readable engine for next-generation defense and robotics.
 
+---
+
+## [How to Install C++ Compiler](src/cpp/0001_Install_Compiler/install_compiler_001.md)
+
+---
+
 C++ is finally safe. The CATopalian Paradigm completely eradicates memory leaks and dangling pointers. A high-performance, ultra-readable 21st-century architecture designed to solve the embedded engineering crisis.
 
 ---
