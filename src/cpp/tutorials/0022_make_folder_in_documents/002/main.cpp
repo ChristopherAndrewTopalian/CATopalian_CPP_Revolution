@@ -46,7 +46,7 @@ int main()
     create_starfleet_directory("StarfleetData\\MissionLogs");
 
     std::cout << "\nPress Enter to Exit...";
-    std::cin.ignore(10000, '\n');
+    std::cin.ignore();
     std::cin.get();
 
     return 0;
