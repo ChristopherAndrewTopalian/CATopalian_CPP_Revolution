@@ -7,7 +7,7 @@
 #include <iostream>
 #include <string>
 
-void consoleLog(const std::string message)
+void consoleLog(std::string message)
 {
     std::cout << message << "\n";
 }
