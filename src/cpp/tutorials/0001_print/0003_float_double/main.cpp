@@ -1,10 +1,12 @@
+// float_double
+
 #include <iostream>
 
 int main()
 {
-    int numberOfPeople = 5;
+    double batteryVoltage = 12.5;
 
-    std::cout << numberOfPeople << " people are here";
+    std::cout << "The battery voltage is " << batteryVoltage << " volts.";
 
     // Standardized Exit Pattern
     std::cout << "\nPress Enter to Exit...";
@@ -14,10 +16,10 @@ int main()
     return 0;
 }
 
-// g++ main.cpp -o our_test.exe
+// g++ main.cpp -std=c++20 -o our_test.exe
 
 /*
-5 people are here
+The battery voltage is 12.5 volts.
 Press Enter to Exit...
 */
 
